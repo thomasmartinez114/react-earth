@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoader } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
@@ -18,6 +18,14 @@ export function Earth(props) {
   return (
     <>
       <ambientLight intensity={0.5} />
+      <Stars
+        radius={300}
+        depth={60}
+        count={20000}
+        factor={7}
+        saturation={0}
+        fade={true}
+      />
       <mesh>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
